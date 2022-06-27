@@ -20,7 +20,13 @@ jobs:
       # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - run: echo World
-
+  say-halima:
+      docker:
+        - image: circleci/node:13.8.0
+        # Add steps to the job
+        # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+      steps:
+        - run: echo $HALIMA_ENV
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -30,3 +36,4 @@ workflows:
       - print-world:
           requires: 
           - print-hello
+      - say-halima
