@@ -11,10 +11,7 @@ jobs:
       # Add steps to the job
       # See: https://circleci.com/docs/2.0/configuration-reference/#steps
       steps:
-        - checkout
-        - run:
-            name: "Say hello again"
-            command: "echo Hello"
+        - run: "echo Hello"
 
   print-world:
     docker:
@@ -22,10 +19,7 @@ jobs:
       # Add steps to the job
       # See: https://circleci.com/docs/2.0/configuration-reference/#steps
       steps:
-        - checkout
-        - run:
-            name: "Say World!"
-            command: "echo World"
+        - run: "echo World"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -33,6 +27,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - print-hello
-      - print-world
+      - print-world:
         - requires: 
           - print-hello
