@@ -7,19 +7,19 @@ version: 2.1
 jobs:
   print-hello:
     docker:
-        - image: circleci/node:13.8.0
+      - image: circleci/node:13.8.0
       # Add steps to the job
       # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-      steps:
-        - run: "echo Hello"
+    steps:
+      - run: "echo Hello"
 
   print-world:
     docker:
-        - image: circleci/node:13.8.0
+      - image: circleci/node:13.8.0
       # Add steps to the job
       # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-      steps:
-        - run: "echo World"
+    steps:
+      - run: "echo World"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
